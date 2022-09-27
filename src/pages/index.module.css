@@ -1,0 +1,12 @@
+.nav-Links{
+    display: flex;
+    list-style: none;
+    padding-left: 1vw;
+}
+
+.nav-Link-Item{
+    color: black;
+    text-decoration: none;
+  
+}
+
