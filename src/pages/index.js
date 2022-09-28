@@ -5,35 +5,34 @@ import Seo from '../components/seo'
 import {Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import {
-  navLinks,
-  navLinkItem
+  flexi,
+  scan,
 } from './index.module.css'
 
 
 const IndexPage =  ({ data }) => {
 
   return (
-    <Layout pageTitle="Home Page">      
-      {
-        data.allMdx.nodes.map((node) => (
-          <article  key={node.id}>
-            <ul className={navLinks}>
-              <li className={navLinkItem}>
+    <Layout>
+      <div className={flexi}>
+        {
+          data.allMdx.nodes.map((node) => (
+              <div className={scan} key={node.id}>
                 <Link to={`/scans/${node.frontmatter.slug}`}>
                   <GatsbyImage image={getImage(node.frontmatter.image)}/>
                 </Link>
-              </li>
-            </ul>
-          </article>
-        ))
-      }
+              </div>
+          ))
+        }
+      </div>
     </Layout>
+
   )
 }
 
 export const query = graphql`
   query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(sort: {fields: frontmatter___slug, order: ASC}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")

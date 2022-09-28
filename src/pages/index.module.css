@@ -1,12 +1,13 @@
-.nav-Links{
+.flexi{
+    width: 98vw;
+    margin-left: 1vw;
     display: flex;
-    list-style: none;
-    padding-left: 1vw;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
-.nav-Link-Item{
-    color: black;
-    text-decoration: none;
-  
+.scan{
+    margin-bottom: 1vw;
 }
 
