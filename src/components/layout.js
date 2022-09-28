@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import {
   container,
-  navLinks,
-  navLinkItem,
-  navLinkText,
+  // navLinks,
+  // navLinkItem,
+  // navLinkText,
   siteTitle,
 } from './layout.module.css'
 
