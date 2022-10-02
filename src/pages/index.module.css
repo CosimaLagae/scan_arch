@@ -1,5 +1,5 @@
 .flexi{
-    width: 98vw;
+    width: 97vw;
     margin-left: 1vw;
     display: flex;
     flex-wrap: wrap;
@@ -11,3 +11,29 @@
     margin-bottom: 1vw;
 }
 
+.picture{
+    display: flex;
+    margin-left: 1vw;
+    width: auto;
+    margin-right: 0;
+}
+
+.info{
+    margin-left: 2vw;
+}
+
+.flex{
+    display: flex;
+    overflow-x: auto;
+}
+
+h2{
+    margin: 0;
+    padding-bottom: 2vh;
+    font-size: 2rem;
+}
+
+p{
+    font-size: 1rem;
+    margin: 0;
+}

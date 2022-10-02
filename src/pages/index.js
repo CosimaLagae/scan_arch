@@ -8,6 +8,7 @@ import {
   flexi,
   scan,
 } from './index.module.css'
+import { motion } from "framer-motion"
 
 
 const IndexPage =  ({ data }) => {
@@ -17,11 +18,16 @@ const IndexPage =  ({ data }) => {
       <div className={flexi}>
         {
           data.allMdx.nodes.map((node) => (
-              <div className={scan} key={node.id}>
+              <motion.div 
+              initial={{opacity:0}} 
+              animate={{opacity:1}}
+              transition={{duration:3}} 
+              className={scan} 
+              key={node.id}>
                 <Link to={`/scans/${node.frontmatter.slug}`}>
                   <GatsbyImage image={getImage(node.frontmatter.image)}/>
                 </Link>
-              </div>
+              </motion.div>
           ))
         }
       </div>
@@ -31,25 +37,31 @@ const IndexPage =  ({ data }) => {
 }
 
 export const query = graphql`
-  query {
-    allMdx(sort: {fields: frontmatter___slug, order: ASC}) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          slug
-          image {
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
+{
+  allMdx(sort: {fields: frontmatter___slug, order: ASC}) {
+    nodes {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
+        slug
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 200, quality: 100)
           }
-          image_alt
         }
-        id
-        excerpt
+        image_alt
+        image2 {
+          childImageSharp {
+            gatsbyImageData(width: 200, quality: 100)
+          }
+        }
       }
+      id
+      excerpt
     }
   }
+}
+
 `
 
 export const Head = () => <Seo title="Home Page" />

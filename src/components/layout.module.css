@@ -10,6 +10,11 @@ body{
 
 .heading {
   color: black;
+  text-decoration: none;
+}
+.headlink{
+  text-decoration: none;
+  color: black;
 }
 .nav-links {
   display: flex;
@@ -40,4 +45,9 @@ body{
 
 .img{
     width: 5vw;
+}
+
+
+Link{
+  text-decoration: none;
 }
